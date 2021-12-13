@@ -26,3 +26,34 @@ class XXX extends BaseController{
 		return formbasico($fields,'');
 	}
 }
+
+&&&<?php
+###### EDIT ######
+$title = 'Editar ';
+?>
+<?=cardprimary($title,$formulario);?>
+<!--
+<script src="//cdn.ckeditor.com/4.7.0/full/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'textarea_by_id' );
+</script>
+-->
+
+&&&<?php
+###### INDEX ######
+?>
+<h1>
+	Lista <?=URL.$breadcrumb[0]?>
+	<a href='#' class='btn btn-success' data-toggle='modal' data-target='#modal_agregar_item'>Agregar con Modal</a>
+	<a href="<?=URL.$breadcrumb[0]?>/edit/new" class='btn btn-primary'>Agregar en ventana</a>
+</h1>
+<?= !isset($lista) ? '' : $lista ;?>
+<?= !isset($modal_agregar_item) ? '' : $modal_agregar_item ;?>
+&&&<?php
+#### SHOW ####
+?>
+<a href='#' class='btn btn-success btn-sm' data-toggle='modal' data-target='#modal_editar_item'> Editar Modal</a>
+<a href="<?=URL?><?=$item['tabla']?>/edit/<?=$item['id']?>">Editar</a>
+<hr>
+<?=li($item)?>
+<?=$modal_editar_item?>
