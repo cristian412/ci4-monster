@@ -1,0 +1,28 @@
+<?php
+namespace App\Controllers;
+
+class XXX extends BaseController{
+	public function __construct() {
+		$this->tabla = 'xxx';
+	}
+	public function index(){
+		$data['breadcrumb'] = [$this->tabla, 'lista', ''];
+		$data['content'] = listasimple( $this->model->grid($this->tabla) );
+		return view('layout/index', $data);
+	}
+	public function show($id){
+		$data['item'] = $this->model->item($this->tabla,$id);
+		$data['modal_editar_item'] = modal($this->formulario($id),'modal_editar_item' );
+		$data['content'] = view($this->tabla.'/show',$data);
+		return view('layout/index', $data);
+	}
+	public function edit($id='new'){
+		$data['formulario'] = $this->formulario($id);
+		$data['content'] = view($this->tabla.'/edit',$data);
+		return view('layout/index', $data);
+	}
+	private function formulario($id='new'){
+		$fields = $this->model->form($this->tabla,$id);
+		return formbasico($fields,'');
+	}
+}
