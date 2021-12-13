@@ -44,11 +44,9 @@ $title = 'Editar ';
 &&&<?php
 ###### INDEX ######
 ?>
-<?php
-###### INDEX ######
 $tabla = (isset($breadcrumb[0])) ?  $breadcrumb[0] : 'Tabla Sin Titulo';
 ?>
-<h1> Lista <?=URL.$tabla?>
+<h1> Lista <?=$tabla?>
 <a href='#' class='btn btn-success' data-toggle='modal' data-target='#modal_agregar_item'>Agregar con Modal</a>
 <a href="<?=URL.$tabla?>/edit/new" class='btn btn-primary'>Agregar en ventana</a>
 </h1>
