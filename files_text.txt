@@ -7,7 +7,9 @@ class XXX extends BaseController{
 	}
 	public function index(){
 		$data['breadcrumb'] = [$this->tabla, 'lista', ''];
-		$data['content'] = listasimple( $this->model->grid($this->tabla) );
+		$data['modal_agregar_item'] = modal($this->formulario(),'modal_agregar_item' );
+		$data['lista'] = listasimple( $this->model->grid($this->tabla) );
+		$data['content'] = view($this->tabla.'/index',$data);
 		return view('layout/index', $data);
 	}
 	public function show($id){
