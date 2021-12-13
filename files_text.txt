@@ -43,7 +43,6 @@ $title = 'Editar ';
 
 &&&<?php
 ###### INDEX ######
-?>
 $tabla = (isset($breadcrumb[0])) ?  $breadcrumb[0] : 'Tabla Sin Titulo';
 ?>
 <h1> Lista <?=$tabla?>
