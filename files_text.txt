@@ -33,7 +33,7 @@ class XXX extends BaseController{
 ###### EDIT ######
 $title = 'Editar ';
 ?>
-<?=cardprimary($title,$formulario);?>
+<?=card($title,$formulario);?>
 <!--
 <script src="//cdn.ckeditor.com/4.7.0/full/ckeditor.js"></script>
 <script>
